@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
+const films = require("./routes/films");
 const express = require("express");
 const app = express();
 
@@ -12,7 +13,7 @@ mongoose
 app.use(express.json());
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
-
+app.use("/api/films", films);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
